@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Senior-friendly base styles */
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white text-neutral-900 antialiased;
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: more) {
+    body {
+      @apply bg-white text-black;
+    }
+
+    a {
+      @apply underline;
+    }
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Focus styles for keyboard navigation */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary ring-2 ring-primary ring-offset-2;
+  }
+
+  /* Larger tap targets for mobile */
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+@layer components {
+  /* Button styles */
+  .btn {
+    @apply px-8 py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center justify-center;
+    @apply focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2;
+    min-height: 56px; /* Larger than standard for seniors */
+    font-size: 20px;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark active:scale-95;
+    @apply focus-visible:outline-primary;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary-dark active:scale-95;
+    @apply focus-visible:outline-secondary;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+    @apply focus-visible:outline-primary;
+  }
+
+  .btn-large {
+    @apply px-12 py-6 text-2xl;
+    min-height: 72px;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-8 border border-neutral-200;
+  }
+
+  .card-hover {
+    @apply transition-shadow duration-200 hover:shadow-xl;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl;
+  }
+
+  /* Typography */
+  .heading-1 {
+    @apply text-4xl md:text-5xl font-bold text-neutral-900 leading-tight;
+  }
+
+  .heading-2 {
+    @apply text-3xl md:text-4xl font-bold text-neutral-900 leading-tight;
+  }
+
+  .heading-3 {
+    @apply text-2xl md:text-3xl font-semibold text-neutral-900;
+  }
+
+  .text-large {
+    @apply text-xl md:text-2xl text-neutral-700 leading-relaxed;
+  }
+}
+
+@layer utilities {
+  /* Accessibility utilities */
+  .sr-only-focusable:not(:focus):not(:focus-within) {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  /* Touch-friendly spacing */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px] inline-flex items-center justify-center;
+  }
+
+  /* High contrast utilities */
+  .high-contrast {
+    @apply bg-white text-black border-black;
+  }
+}

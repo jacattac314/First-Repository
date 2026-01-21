@@ -47,6 +47,7 @@ A complete website architecture for a service business designed specifically for
 - [Core architecture and UX design](docs/odd-job-heroes-architecture.md) - Product strategy, user flows, page architecture
 - [Data model and technical specs](docs/odd-job-heroes-data-model.md) - Database schema, API endpoints, notifications, security
 - [Implementation strategy](docs/odd-job-heroes-implementation.md) - Tech stack, MVP roadmap, phased delivery, cost structure
+- **[Frontend Implementation →](odd-job-heroes/)** - Live Next.js application (8 pages, mobile-responsive)
 
 **What this demonstrates:**
 - **User-centered design**: Accessibility and senior-friendly UX as core requirements, not afterthoughts
