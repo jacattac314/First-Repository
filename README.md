@@ -32,6 +32,37 @@ This is how automation graduates from scripts to managed infrastructure.
 
 ---
 
+### [🤖 ML/AI Models for Cost Prediction & Anomaly Detection](models/README.md)
+
+Production-ready machine learning models that integrate with the Control Plane for intelligent operations.
+
+**Models:**
+- **Cost Prediction Model** - Predict LLM costs before execution, recommend optimal providers
+- **Anomaly Detection Model** - Real-time detection of unusual agent behavior patterns
+
+**Key capabilities:**
+- Proactive cost optimization across LLM providers
+- Statistical anomaly detection (cost spikes, latency issues, failures)
+- Batch processing for historical analysis
+- Confidence scoring and actionable recommendations
+
+**Implementation:**
+- 3 production-ready Python models with full API
+- Synthetic data generation for training and testing
+- Model evaluation utilities (MAE, RMSE, precision/recall)
+- Jupyter notebook for interactive exploration
+- Integration examples with Control Plane
+
+**What this demonstrates:**
+- **Applied ML**: Practical machine learning for operational problems
+- **Production engineering**: Model versioning, evaluation metrics, retraining pipelines
+- **Data science**: Feature engineering, anomaly detection, cost optimization
+- **Business value**: Measurable ROI through cost savings and risk reduction
+
+ML that saves money, not just slide deck magic.
+
+---
+
 ## Architecture Philosophy
 
 These designs prioritize:
@@ -52,9 +83,20 @@ docs/
 ├── control-plane-technical-specs.md    # Implementation specifications
 ├── example-configurations.md           # Deployment configs & runbooks
 └── architecture-decisions.md           # Design rationale (12 ADRs)
+
+models/
+├── src/
+│   ├── cost_prediction_model.py        # Cost prediction ML model
+│   ├── anomaly_detection_model.py      # Anomaly detection ML model
+│   └── training_utils.py               # Training and evaluation utilities
+├── notebooks/
+│   └── quickstart.ipynb                # Interactive model demo
+├── data/                                # Training data storage
+├── requirements.txt                     # Python dependencies
+└── README.md                            # Model documentation
 ```
 
-**Lines of documentation:** ~2,000+ lines of production-ready architecture specs
+**Lines of code:** ~2,000+ lines of production-ready architecture specs + ~1,000 lines of ML code
 
 **Coverage:**
 - System architecture and business case
@@ -67,5 +109,8 @@ docs/
 - Security model and isolation strategy
 - 12 Architecture Decision Records
 - Operational runbooks
+- Production ML models (cost prediction, anomaly detection)
+- Model training pipelines and evaluation metrics
+- Interactive Jupyter notebooks
 
 Not a side project. A platform.
